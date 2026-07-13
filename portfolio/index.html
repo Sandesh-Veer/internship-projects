@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">
+            <span class="wave-hand">👋</span>
+            <div class="hello-container">
+                <span class="hello-text hello-normal">Hello !</span>
+                <span class="hello-text hello-hover">Helloooooo!</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="socials">
+                <a href="https://github.com/pawantryambake" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+                <a href="https://instagram.com/pawan_tryambake" target="_blank"><img src="assets/instagram.png" alt="Instagram"></a>
+                <div class="music-box">
+                    <a href="#" id="musicBtn">
+                        <img src="assets/music.png" alt="Music">
+                    </a>
+                    <div class="player-card">
+                        <span class="now-playing">NOW PLAYING</span>
+                        <h4>Midnight Call</h4>
+                        <p>by Harkirat Sangha</p>
+                        <div class="wave">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="mailto:itzpawan74@gmail.com" target="_blank"><img src="assets/mail.png" alt="Email"></a>
+                <a href="https://wa.me/9529084203" target="_blank"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+            </div>
+
+            <div id="clock"></div>
+            <div class="clock">
+                <div class="clock-time" id="time">00:00</div>
+                <div class="clock-info">
+                    <span id="ampm"></span>
+                    <span id="date"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- SVG Wave -->
+            <svg class="hero-svg" viewBox="0 0 5000 740" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <path id="waveBottom" d="
+                        M-1000 420
+                        C-600 640 -250 170 150 420
+                        S700 670 1100 420
+                        S1650 170 2050 420
+                        S2600 670 3000 420
+                        S3550 170 3950 420
+                        S4500 670 5000 420 " class="wave-path"/>
+                </defs>
+                <!-- Lower Text -->
+                <text class="curveText">
+                    <textPath id="waveText" href="#waveBottom" startOffset="0%">
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                        C — C++ — Python — Java — SQL — APIs — Linux — VS Code — Portfolio — C — C++ — Python — Java — SQL — APIs —
+                    </textPath>
+                </text>
+            </svg>
+            <h1 id="name">
+                <span class="letter">P</span>
+                <span class="letter">A</span>
+                <span class="letter">W</span>
+                <span class="letter">A</span>
+                <span class="letter">N</span>
+                <div id="hoverLogo">
+                    <svg width="30" height="30" viewBox="0 0 100 100">
+                        <g fill="none" stroke="currentColor" stroke-width="5">
+                            <rect x="28" y="28" width="44" height="44" transform="rotate(45 50 50)" rx="4"/>
+                            <circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/>
+                        </g>
+                    </svg>
+                </div>
+            </h1>
+            <img id="hover-img">
+            <h2 id="language">पवन</h2>
+            <p>Frontend Developer</p>
+        </div>
+    </section>
+
+    <audio id="favSong">
+        <source src="assets/midnight_call.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ================= about ================= -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-left">
+                <span class="mini-title">WHO AM I?</span>
+                <h2>
+                    Nice to meet you.
+                    <br>
+                    I'm Pawan.
+                </h2>
+            </div>
+            <div class="about-right">
+                <p>
+                    I'm an IT diploma student from Pune, India, with a growing interest in frontend development.
+                    I enjoy creating clean, aesthetic and interactive user interfaces while continuously improving
+                    my skills in HTML, CSS, JavaScript and React.
+                </p>
+                <p>
+                    I believe great interfaces aren't just beautiful—they should feel effortless to use.
+                    Every day, I'm learning, experimenting and pushing myself to become a better developer.
+                </p>
+                <a href="assets/Pawan_Resume.pdf" target="_blank" class="resume-btn">
+                    View Resume →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CRAFT ================= -->
+    <section class="craft">
+        <div class="craft-left">
+            <span class="section-tag">Selected Work</span>
+            <h2>
+                Building clean,
+                interactive experiences
+                through code.
+            </h2>
+            <p>
+                Every project is a chance to learn something new.
+                I enjoy transforming ideas into interfaces that are
+                simple, responsive and memorable.
+            </p>
+            <p>
+                HTML, CSS, JavaScript and React are currently my
+                favorite tools, while animation and interaction are
+                becoming my strongest interests.
+            </p>
+        </div>
+        <div class="craft-right">
+            <div class="terminal">
+                <div class="terminal-top">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <button id="themeBtn">
+                        <i data-lucide="sun-medium"></i>
+                    </button>
+                </div>
+                <pre><code><span class="keyword">export default</span> {
+    <span class="property">name</span>: <span class="string">"Pawan"</span>,
+    <span class="property">title</span>: <span class="string">"Frontend Developer"</span>,
+    <span class="property">philosophy</span>:
+        <span class="string">"Design first,
+         code second."</span>,
+    <span class="property">currentlyBuilding</span>:
+        <span class="string">"Interactive Portfolio"</span>,
+    <span class="property">status</span>:
+        <span class="string">"Always Learning"</span>
+};
+</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BUILD ================= -->
+    <section class="build">
+        <div class="build-head">
+            <span class="section-tag">MY PROCESS</span>
+            <h2>How I Build.</h2>
+            <p class="build-para">
+                Every project follows a simple philosophy.
+                Understand
+                <span class="problem">
+                    the problem,
+                    <span class="tag-stack">
+                        <span class="tag tag-purple">
+                            <i data-lucide="zap"></i>
+                            Performance
+                        </span>
+                        <span class="tag tag-yellow">
+                            <i data-lucide="shield-check"></i>
+                            Accessibility
+                        </span>
+                        <span class="tag tag-green">
+                            <i data-lucide="smartphone"></i>
+                            Responsive
+                        </span>
+                        <span class="tag tag-pink">
+                            <i data-lucide="palette"></i>
+                            UI / UX
+                        </span>
+                    </span>
+                </span>
+                design with intention,
+                build carefully and refine relentlessly.
+            </p>
+        </div>
+        <div class="build-grid">
+            <div class="build-card think">
+                <div class="line"></div>
+                <span class="build-no">01</span>
+                <h3>Think</h3>
+                <p>
+                    Every project begins with understanding
+                    the problem before touching a single
+                    line of code.
+                </p>
+            </div>
+            <div class="build-card design">
+                <div class="line"></div>
+                <span class="build-no">02</span>
+                <h3>Design</h3>
+                <p>
+                    Simplicity isn't about removing details.
+                    It's about keeping only the important
+                    ones.
+                </p>
+            </div>
+            <div class="build-card build1">
+                <div class="line"></div>
+                <span class="build-no">03</span>
+                <h3>Build</h3>
+                <p>
+                    Clean code and thoughtful interactions
+                    create experiences people remember.
+                </p>
+            </div>
+            <div class="build-card refine">
+                <div class="line"></div>
+                <span class="build-no">04</span>
+                <h3>Refine</h3>
+                <p>
+                    Tiny adjustments often make the biggest
+                    difference in the final experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= IDENTITY ================= -->
+    <section class="toolbox">
+        <div class="toolbox-left">
+            <span class="section-tag">TOOLBOX</span>
+            <h2>
+                The tools
+                behind every idea.
+            </h2>
+            <p>
+                Every project begins with a simple thought.
+                The difference lies in choosing the right
+                tools to shape that thought into something
+                people can see, use and remember.
+                These are the technologies I rely on
+                to build clean, modern and meaningful
+                digital experiences.
+            </p>
+        </div>
+        <div class="toolbox-right">
+            <div class="toolbox-box" id="toolbox">
+                <span class="skill html">HTML</span>
+                <span class="skill css">CSS</span>
+                <span class="skill js">JavaScript</span>
+                <span class="skill react">React</span>
+                <span class="skill git">Git</span>
+                <span class="skill vscode">VS Code</span>
+                <span class="skill nodejs">Node.js</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ------------CONTACT--------------- -->
+    <section class="connect">
+        <div class="connect-left">
+            <span class="section-tag">CONNECT</span>
+            <h2>Let's build something together.</h2>
+            <p>
+                Every great project starts with a simple
+                conversation.
+                Whether you have an idea, an opportunity,
+                or just want to say hello,
+                I'd love to hear from you.
+            </p>
+            <p class="ending">
+                Thanks for scrolling.
+                You made it till the end.
+            </p>
+        </div>
+        <div class="connect-right">
+            <div class="sticky-note">
+                <div class="pin"></div>
+                <h3>Leave a note.</h3>
+                <p class="note-text">
+                    Some conversations
+                    turn into great ideas.
+                    Maybe this one will too.
+                </p>
+                <a href="mailto:itzpawan74@gmail.com?subject=Let's%20Build%20Something" class="message-btn">
+                    <span> ✉ Send me a message</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+        <div class="portfolio-end">Crafted with 💙 by Pawan.</div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
