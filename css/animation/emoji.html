@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Center the emoji on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        /* The main emoji container */
+        .emoji {
+            width: 200px;
+            height: 200px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Eye container to help position the pupils */
+        .eyes {
+            display: flex;
+            gap: 40px;
+            position: absolute;
+            top: 60px;
+        }
+
+        /* White part of the eye */
+        .eye {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Black pupil */
+        .pupil {
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 12.5px;
+            left: 12.5px;
+            /* Smooth movement when mouse leaves the window */
+            transition: transform 0.1s ease-out;
+        }
+
+        /* The mouth */
+        .mouth {
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            border-radius: 0 0 100px 100px;
+            position: absolute;
+            bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        /* Class added via JS when clicked */
+        .mouth.happy {
+            height: 50px;
+            border-radius: 0 0 100px 100px;
+        }
+
+        .mouth.surprised {
+            height: 80px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="emoji" id="emoji">
+        <div class="eyes">
+            <div class="eye"><div class="pupil"></div></div>
+            <div class="eye"><div class="pupil"></div></div>
+        </div>
+        <div class="mouth" id="mouth"></div>
+    </div>
+
+    <script>
+        const pupils = document.querySelectorAll('.pupil');
+        const mouth = document.getElementById('mouth');
+
+        // 1. Logic for eyes following the cursor
+        document.addEventListener('mousemove', (e) => {
+            pupils.forEach(pupil => {
+                const rect = pupil.getBoundingClientRect();
+                const pupilX = rect.left + rect.width / 2;
+                const pupilY = rect.top + rect.height / 2;
+                
+                const angle = Math.atan2(e.clientX - pupilX, e.clientY - pupilY);
+                const rotation = angle * (180 / Math.PI) * -1 + 180;
+                
+                // Move the pupil slightly within the eye boundary
+                const dx = (e.clientX - pupilX) / 20;
+                const dy = (e.clientY - pupilY) / 20;
+                
+                pupil.style.transform = `translate(${dx}px, ${dy}px)`;
+            });
+        });
+
+        // 2. Logic for mouth changing on click
+        document.addEventListener('click', () => {
+            mouth.classList.toggle('surprised');
+        });
+    </script>
+</body>
+</html>
