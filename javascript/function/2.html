@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with OTP</title>
+</head>
+<body>
+
+    <input type="text" id="user" placeholder="Enter username">
+    <br><br>
+
+    <input type="password" id="pass" placeholder="Enter password">
+    <br><br>
+
+    <button onclick="getclick()">Login</button>
+
+    <script>
+        let user = document.getElementById("user");
+        let pass = document.getElementById("pass");
+
+        let username = "admin";
+        let password = "admin123";
+
+        function getclick() {
+
+            if (user.value === username && pass.value === password) {
+                alert("Login Successful");
+            }
+            else {
+
+                prompt(
+                    "Incorrect username or password.\nEnter your mobile number to receive OTP:"
+                );
+
+                let otp = Math.floor(1000 + Math.random() * 9000);
+                let otpTime = Date.now();
+
+                alert("Your OTP is: " + otp);
+                alert("OTP is valid for 30 seconds.");
+
+                let enteredOtp = prompt("Enter OTP:");
+
+                let currentTime = Date.now();
+
+                if (currentTime - otpTime > 30000) {
+                    alert("OTP Expired!");
+                }
+                else if (Number(enteredOtp) === otp) {
+                    alert("OTP Verified. Login Successful");
+                }
+                else {
+                    alert("Invalid OTP!");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

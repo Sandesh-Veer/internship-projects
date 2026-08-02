@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<script>
+    var empno=prompt("Enter Employee Number");
+    var name=prompt("Enter Employee Name");
+    var hour=parseInt(prompt("Enter Hour (1-12)"));
+    var period=prompt("Enter AM or PM");
+
+    if(period=="AM"|| period=="am"){
+        if(hour >= 5 && hour <= 11){
+            document.write("Hello "+name+", Good Morning");
+        }
+        else{
+            document.write("Hello "+name+",Good Night");
+        }
+    }
+    else if(period=="PM"||period=="pm"){
+        if(hour==12 || (hour>=1&&hour<=4)){
+            document.write("Hello "+name+",Good Afternoon");
+        }
+        else if(hour>=5 && hour<=8){
+            document.write("Hello "+name+",Good Evening");
+        }
+        else{
+            document.write("Hello "+name+ ",Good Night");
+        }
+    }
+</script>    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Convertor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Text Convertor</h1>
+    <textarea id="text" rows="10" cols="60" placeholder="Enter text here..."></textarea>
+    <br><br>
+    <button onclick="convertToUpper()">toUppercase</button>
+    <button onclick="convertToLower()">toLowercase</button>
+    <button onclick="countWords()">Count Words</button>
+
+    <script>
+        let text = document.getElementById("text");
+        function convertToUpper() {
+            text.value = text.value.toUpperCase();
+        }
+        
+        function convertToLower() {
+            text.value = text.value.toLowerCase();
+        }
+
+        function countWords() {
+            let wordCount = text.value.split(" ").length;
+            alert("Word Count: " + wordCount);
+        }
+        </script>
+    </body>
+    </html>
+</body>
+</html>

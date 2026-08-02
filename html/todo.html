@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 50px;
+        }
+        .todo-container {
+            background-color: #ffffff;
+            padding: 30px;
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid #cccccc;
+            border-radius: 8px; /* Slightly curve container edges */
+        }
+        h1 {
+            color: #333333;
+            text-align: center;
+            margin-top: 0;
+        }
+        input[type="text"] {
+            width: 250px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cccccc; /* Added explicitly to apply radius */
+            border-radius: 4px; /* Slightly curve input edges */
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            border-radius: 4px; /* Slightly curve button edges */
+        }
+        .btn-add {
+            background-color: #4a90e2;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            background-color: #f9f9f9;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #eeeeee;
+            border-radius: 4px; /* Slightly curve list item edges */
+        }
+        .action-btns {
+            float: right;
+        }
+        .btn-update {
+            background-color: #f0ad4e;
+            margin-right: 5px; /* Added some spacing */
+        }
+        .btn-delete {
+            background-color: #d9534f;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="todo-container">
+        <h1>To Do App</h1>
+        <input type="text" id="todo" placeholder="Enter A Task">
+        <button class="btn-add" onclick="addTodo()">Add ToDo</button>
+        <ul id="todolist"></ul>
+    </div>
+
+    <script>
+        let arr = [];
+        let task = document.getElementById("todo");
+        let list = document.getElementById("todolist");
+
+        function addTodo() {
+            if (task.value.trim() === "") {
+                alert("Please enter a valid task!");
+                return;
+            }
+            arr.push(task.value.trim());
+            task.value = ""; 
+            renderTodo();
+        }
+
+        function renderTodo() {
+            list.innerHTML = "";
+            arr.forEach((val, index) => {
+                list.innerHTML += `
+                    <li>
+                        <span>${val}</span>
+                        <div class="action-btns">
+                            <button class="btn-update" onclick="updateTodo(${index})">Update</button>
+                            <button class="btn-delete" onclick="deleteTodo(${index})">Delete</button>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                `;
+            });
+        }
+
+        function deleteTodo(index) {
+            arr.splice(index, 1);
+            renderTodo();
+        }
+
+        function updateTodo(index) {
+            let updatedTask = prompt("Update your task:", arr[index]);
+            if (updatedTask !== null && updatedTask.trim() !== "") {
+                arr[index] = updatedTask.trim(); 
+                renderTodo(); 
+            }
+        }
+    </script>
+
+</body>
+</html>

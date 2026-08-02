@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colour Wheel</title>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.circle{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:conic-gradient(
+        red 0deg 60deg,
+        orange 60deg 120deg,
+        yellow 120deg 180deg,
+        green 180deg 240deg,
+        blue 240deg 300deg,
+        purple 300deg 360deg
+    );
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="circle"></div>
+
+</body>
+</html>

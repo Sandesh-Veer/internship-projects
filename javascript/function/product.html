@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #productContainer div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #productContainer img {
+            max-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Lite</h1>
+    <input type="text" id="search" placeholder="Search for products...">
+    <div id="productContainer"></div>
+
+    <script>
+        let container = document.getElementById("productContainer");
+        let search = document.getElementById("search");
+
+        let store = {
+            apple: {
+                company: "Apple",
+                products: [
+                    {
+                        name: "iPhone 15",
+                        price: "₹79,900",
+                        image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=300"
+                    },
+                    {
+                        name: "MacBook Air",
+                        price: "₹1,14,900",
+                        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300"
+                    },
+                    {
+                        name: "iPad Air",
+                        price: "₹59,900",
+                        image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300"
+                    }
+                ]
+            },
+            samsung: {
+                company: "Samsung",
+                products: [
+                    {
+                        name: "Galaxy S24",
+                        price: "₹74,999",
+                        image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300"
+                    },
+                    {
+                        name: "Galaxy Tab",
+                        price: "₹69,999",
+                        image: "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=300"
+                    },
+                    {
+                        name: "Galaxy Watch",
+                        price: "₹29,999",
+                        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300"
+                    }
+                ]
+            },
+            sony: {
+                company: "Sony",
+                products: [
+                    {
+                        name: "PlayStation 5",
+                        price: "₹54,990",
+                        image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=300"
+                    },
+                    {
+                        name: "Sony Headphones",
+                        price: "₹19,990",
+                        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300"
+                    },
+                    {
+                        name: "Sony Camera",
+                        price: "₹64,990",
+                        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300"
+                    }
+                ]
+            }
+        };
+
+        function display(productsList) {
+            container.innerHTML = "";
+
+            productsList.forEach(product => {
+                let productDiv = document.createElement("div");
+                
+                productDiv.innerHTML = `
+                    <img src="${product.img}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>Category: ${product.cname}</p>
+                    <p>Price: ${product.price}</p>
+                    <p>Description: ${product.description}</p>
+                `;
+                container.appendChild(productDiv);
+            });
+        }
+
+        display(products);
+    </script>
+</body>
+</html>

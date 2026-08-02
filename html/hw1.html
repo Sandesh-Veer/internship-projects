@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <input type="text" id="user" placeholder="Enter Username">
+    <br><br>
+    <input type="password" id="pass" placeholder="Enter Password">
+    <br><br>
+    <button id="btn" onclick="getData()">LOGIN</button>
+    <h2 id="msg"></h2>
+
+    <script>
+        var attempts=0;
+        var freezeT=50*60*1000; 
+
+        function getData() {
+            var username = "pawan_t";
+            var password = "pawan_123";
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+            var msg = document.getElementById("msg");
+            var btn = document.getElementById("btn");
+
+            if (user == username && pass == password) {
+              msg.innerHTML = "Login Successful!";
+              attempts=0;
+            }
+            else {
+                attempts++;
+                if (attempts>=3) {
+                    msg.innerHTML = "Account Frozen for 50 Minutes!";
+                    btn.disabled = true;
+                    setTimeout(function () {
+                      btn.disabled = false;
+                      attempts = 0;
+                      msg.innerHTML = "You can try again now.";
+                    }, freezeTime);
+                }
+                else {
+                    msg.innerHTML = "Invalid Login! Attempts Left: " + (3 - attempts);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

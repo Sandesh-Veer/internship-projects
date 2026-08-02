@@ -1,0 +1,39 @@
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Document</title>
+      </head>
+      <body>
+         <script>
+
+         var num1 = Number(prompt("Enter 1st Number : "));
+         var num2= Number(prompt("Enter 2nd Number : "));
+         
+         var ch = Number(prompt('1.Addition \n2.Sub \n3.Multipliaction\n4.Division'));
+
+         switch (ch) {
+            case 1:
+                document.write('Addition : ',num1 + num2);
+                break;
+
+            case 2:
+                document.write('Sub : ',num1 - num2);
+                break;
+
+            case 3:
+                document.write('Multiplication : ',num1 * num2);
+                break;
+                
+            case 4:
+                document.write('Division : ',num1 / num2);
+                break;
+            default:
+                document.write('Invalide choice!');
+                break;
+         }
+             
+        </script>
+      </body>
+      </html>

@@ -1,0 +1,42 @@
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Document</title>
+      </head>
+      <body>
+         <script>
+
+         var BB = 10000;
+         var ch = Number(prompt('<h1>1.Check Balance \n2.Withdraw \n3.Deposite\n4.Exit'));
+
+         switch (ch) {
+            case 1:
+                document.write('Your Balance is ', BB +'rs');
+                break;
+
+            case 2:
+                var WD = Number(prompt('Enter Amount to Withdraw :'));
+                BB= BB-WD;
+                document.write("Rupees "+WD+ 'Withdraw Successfully, Your Current Balance is ', BB +'rs');
+                break;
+
+            case 3:
+                var DP = Number(prompt('Enter Amount to Deposite :'));
+                BB= BB+DP;
+                document.write("Rupees "+DP+ ' is deposited, Your Current Balance is ', BB +'rs');
+                break;
+                
+            case 4:
+                document.write('Thank uu for choosing us!');
+                break;
+                
+            default:
+                document.write('Invalide choice!');
+                break;
+         }
+             
+        </script>
+      </body>
+      </html>

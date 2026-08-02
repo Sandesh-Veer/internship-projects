@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Amazon Lite</h1>
+    <label>Enter product price</label>
+    <input type="number" id="price">
+    <br><br>
+    <label>Enter product quantity</label>
+    <input type="number" id="qn">
+    <br><br>
+    <button onclick="getDiscount1()">Apply 10% Discount</button>
+    <button onclick="getDiscount2()">Apply 20% Discount</button>
+    <button onclick="getDiscount3()">Apply 30% Discount</button>
+    <h2 id="result"></h2>
+
+    <script>
+        var price = document.getElementById("price");
+        var qn = document.getElementById("qn");
+        var result = document.getElementById("result");
+
+        function getDiscount1() {
+            var totalBill = price.value * qn.value;
+            if (totalBill > 1000) {
+                var discount = totalBill * 0.10;
+
+                result.innerHTML =
+                    "Total Bill: " + totalBill + " Rs" +
+                    "<br>Discount: " + discount + " Rs" +
+                    "<br>Final Bill: " + (totalBill-discount) + " Rs" +
+                    "<br><button>Proceed To Pay</button>";
+            }
+            else {
+                alert("No discount applicable for bill less than 1000 Rs.\nBuy more to get 10% discount.");
+            }
+        }
+
+        function getDiscount2() {
+            var totalBill = price.value * qn.value;
+            if (totalBill > 2000) {
+                var discount = totalBill * 0.20;
+
+                result.innerHTML =
+                    "Total Bill: " + totalBill + " Rs" +
+                    "<br>Discount: " + discount + " Rs" +
+                    "<br>Final Bill: " + (totalBill - discount) + " Rs" +
+                    "<br><button>Proceed To Pay</button>";
+            }
+            else {
+                alert("No discount applicable for bill less than 2000 Rs.\nBuy more to get 20% discount.");
+            }
+        }
+
+        function getDiscount3() {
+            var totalBill = price.value * qn.value;
+            if (totalBill > 3000) {
+                var discount = totalBill * 0.30;
+
+                result.innerHTML =
+                    "Total Bill: " + totalBill + " Rs" +
+                    "<br>Discount: " + discount + " Rs" +
+                    "<br>Final Bill: " + (totalBill - discount) + " Rs" +
+                    "<br><button>Proceed To Pay</button>";
+            }
+            else {
+                alert("No discount applicable for bill less than 3000 Rs.\nBuy more to get 30% discount.");
+            }
+        }
+    </script>
+
+</body>
+</html>

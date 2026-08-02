@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <input type="text" name="" id="user" placeholder="Enter Username">
+    <br> <br>
+    <input type="password" name="" id="pass" placeholder="Enter Password">
+    <button onclick="getData()">LOGIN</button>
+    <h1 id="msg"></h1>
+
+    <script>
+        function getData(){
+            var a1='pawan_t'
+            var b1='pawan_123'
+            var msg=document.getElementById("msg")
+            var a=document.getElementById("user")
+            var b=document.getElementById("pass")
+            if(a.value==a1 && b.value==b1){
+
+               document.write("Logine Successful !")
+            }
+            else if(a.value!=a1){
+               document.write("Username not Found!");
+            }
+            else if(b.value!=b1){
+               document.write("Password Incorrect!");
+            }
+        }
+    </script>
+</body>
+</html>

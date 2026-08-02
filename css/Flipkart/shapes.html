@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Shape Masking Practice - Updated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .shape-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .shape {
+            display: inline-block;
+            margin: 15px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+            background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500&auto=format&fit=crop&q=60');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Row 1 Shapes */
+        .leaf {
+            width: 150px;
+            height: 150px;
+            border-radius: 100% 0 100% 100%; /* Bottom-left heavy leaf */
+            /* Adjustment to match image: top-right is sharp, bottom-left is curved */
+            border-radius: 100% 0 0 100%; 
+        }
+        
+        /* Correction for the specific "Leaf" in image: 
+           It looks like a quarter circle turned sideways */
+        .leaf { 
+            width: 120px; height: 120px; 
+            border-radius: 0 100% 0 100%; 
+        }
+
+        .half-oval {
+            width: 250px;
+            height: 125px;
+            border-radius: 0 0 150px 150px;
+        }
+
+        .oval {
+            width: 250px;
+            height: 130px;
+            border-radius: 50%;
+        }
+
+        .twist {
+            width: 280px;
+            height: 100px;
+            border-radius: 100% 0;
+        }
+
+        /* Row 2 Shapes */
+        .twist-two {
+            width: 260px;
+            height: 120px;
+            border-radius: 0 100px 0 100px;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .tab {
+            width: 120px;
+            height: 130px;
+            border-radius: 0 0 80px 80px;
+        }
+
+        .three-sided {
+            width: 120px;
+            height: 130px;
+            border-radius: 0 80px 80px 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="shape-container">
+        <div class="shape leaf">Leaf</div>
+        <div class="shape half-oval">Half Oval</div>
+        <div class="shape oval">Oval</div>
+        <div class="shape twist">Twist</div>
+    </div>
+
+    <div class="shape-container">
+        <div class="shape twist-two">Twist Two</div>
+        <div class="shape circle">Circle</div>
+        <div class="shape tab">Tab</div>
+        <div class="shape three-sided">Three Sided</div>
+    </div>
+
+</body>
+</html>
